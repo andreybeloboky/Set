@@ -27,16 +27,13 @@ public class Set1 implements Set2 {
             createNewArray();
         }
         array[setSize] = data;
-        int equal = 0;
         for (int i = 0; i < setSize; i++) {
-            if (contains(array[i])) {
-                equal++;
+            boolean equal = contains(array[setSize]);
+            if (equal) {
+                array[setSize] = null;
+                setSize--;
                 break;
             }
-        }
-        if (equal == 1) {
-            array[setSize] = null;
-            setSize--;
         }
         setSize++;
     }
@@ -62,7 +59,12 @@ public class Set1 implements Set2 {
      */
     @Override
     public boolean contains(Object o) {
-        return array[setSize].equals(o) && o.hashCode() == array[setSize].hashCode();
+        for (int i = 0; i < setSize; i++) {
+            if (array[i].equals(o) && array[i].hashCode() == o.hashCode()) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /**

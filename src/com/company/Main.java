@@ -11,8 +11,10 @@ public class Main {
         set.add("3");
         set.add("4");
         set.add("3");
+        set.add("4");
         System.out.println(set.size() + " SIZE");
         set.print();
+        System.out.println(set.contains("3"));
 
     }
 }
