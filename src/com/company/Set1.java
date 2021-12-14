@@ -29,11 +29,12 @@ public class Set1 implements Set2 {
         array[setSize] = data;
         int equal = 0;
         for (int i = 0; i < setSize; i++) {
-            if (array[setSize].equals(array[i]) || array[i].hashCode() == array[setSize].hashCode()) {
+            if (contains(array[i])) {
                 equal++;
+                break;
             }
         }
-        if (equal >= 1) {
+        if (equal == 1) {
             array[setSize] = null;
             setSize--;
         }
@@ -56,12 +57,12 @@ public class Set1 implements Set2 {
     }
 
     /**
-     * @param index - the index is entered by the user.
-     * @return - inside in the index.
+     * @param o
+     * @return
      */
     @Override
-    public boolean contains(int index) {
-        return false;
+    public boolean contains(Object o) {
+        return array[setSize].equals(o) && o.hashCode() == array[setSize].hashCode();
     }
 
     /**
