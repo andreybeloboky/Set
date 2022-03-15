@@ -3,6 +3,18 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        Set1 set = new Set1();
+        set.add("1");
+        set.add("1");
+        set.add("1");
+        set.add("2");
+        set.add("3");
+        set.add("4");
+        set.add("3");
+        set.add("4");
+        System.out.println(set.size() + " SIZE");
+        set.print();
+        System.out.println(set.contains("3"));
+
     }
 }
